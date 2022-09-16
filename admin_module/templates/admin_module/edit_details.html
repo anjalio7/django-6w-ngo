@@ -1,0 +1,83 @@
+{% extends 'admin_module/layout.html' %}
+{% load static %}
+
+{% block body %}
+<div class="banner-bg-inner">
+    <!-- banner-text -->
+    <div class="banner-text-inner">
+        <div class="container">
+            <h2 class="title-inner">
+                edit Person
+            </h2>
+
+        </div>
+    </div>
+    <!-- //banner-text -->
+</div>
+<!-- //banner -->
+<!-- breadcrumbs -->
+<div class="crumbs text-center">
+    <div class="container">
+        <div class="row">
+            <ul class="btn-group btn-breadcrumb bc-list">
+                <li class="btn btn1">
+                    <a href="{% url 'allPersons'%}">
+                        <i class="glyphicon glyphicon-home"></i>
+                    </a>
+                </li>
+                <li class="btn btn2">
+                    <a href="{% url 'allPersons'%}">List Person</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--//breadcrumbs ends here-->
+
+<div class="about-sec section" id="about">
+    <div class="container contact-top1 " id="contact">
+        <form action="{% url 'editdetails' data.id %}" method="post" class="form" enctype="multipart/form-data" >
+            {% csrf_token %}
+            <div class="col-lg-12 form-group mx-auto">
+            <label>Name</label>
+            <input type="text" name="name" value="{{data.name}}" class="form-control text-dark" placeholder="enter name" required>
+        </div>
+            <div class="col-md-12 mx-auto form-group">
+            <label>Age</label>
+            <input type="number" name="age" min="1" required class="form-control text-dark" placeholder="enter age" value="{{data.age}}">
+            </div>
+            <div class="col-lg-12 form-group mx-auto">
+                <div class="form-check">
+                    <label>Gender</label><br>
+                    <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" value="Male" {% if data.gender == 'Male' %} checked {% endif %}>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                      Male
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault2" value = "Female" {% if data.gender == 'Female' %} checked {% endif %}>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Female
+                    </label>
+                  </div>
+                <!-- <label>Gender</label><br><br>
+                <input type="radio" name="gender" checked value="male"class="form-radio" >male
+                <input type="radio"name="gender" value="female" class="form-radio">Female -->
+            </div>
+            <div class="col-lg-12 form-group mx-auto">
+                <label>Needs</label>
+                <input type="text" name="needs" class="form-control text-dark" placeholder="enter needs" value="{{data.needs}}" required>
+            </div>
+            <div class="col-lg-12 form-group mx-auto">
+                <label for="">Image</label>
+                <input type="file" class="form-control text-dark" name = "images">
+            </div>
+            <div class="col-md-12 mx-auto form-group text-center">
+            <button type="submit" class="d-block m-auto btn btn-default ">Edit</button>
+            </div>
+         </form>
+    </div>
+</div>
+
+
+{% endblock %}   

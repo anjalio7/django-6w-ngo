@@ -1,0 +1,76 @@
+{% extends 'admin_module/layout.html' %}
+
+{% block body %}
+
+<div class="banner-bg-inner">
+    <!-- banner-text -->
+    <div class="banner-text-inner">
+        <div class="container">
+            <h2 class="title-inner">
+                donations
+            </h2>
+
+        </div>
+    </div>
+    <!-- //banner-text -->
+</div>
+<!-- //banner -->
+<!-- breadcrumbs -->
+<div class="crumbs text-center mt-4">
+    <div class="container ">
+        <div class="row">
+            <!-- <ul class="btn-group btn-breadcrumb bc-list">
+                <li class="btn btn1">
+                    <a href="{% url 'addevents'%}">
+                        <i class="glyphicon glyphicon-home"></i>
+                    </a>
+                </li>
+                <li class="btn btn2">
+                    <a href="{% url 'addevents'%}">Add Events</a>
+                </li>
+            </ul> -->
+        </div>
+    </div>
+</div>
+<!--//breadcrumbs ends here-->
+
+<div class="about-sec section" id="about">
+    <div class="container">
+
+        <table class="table table-bordered">
+            <tr>
+                <th>ID</th>
+                <th>User</th>
+                <th>User Email</th>
+                <th>Donation Amount</th>
+                <th>Date</th>
+                <th>Reason</th>
+            </tr>
+            {% if data|length > 0 %}
+            {% for i in data %}
+            <tr class="">
+                <td>{{i.id}}</td>
+                <td>{{i.person_id.username}}</td>
+                <td>{{i.person_id.email}}</td>
+                <td>{{i.donation_amount}}/-</td>
+                <td>{{i.donateDate}}</td>
+                <td>
+                    {{i.reason}}
+                </td>
+
+            </tr>
+            {% endfor %}
+
+            {% else %}
+                <tr>
+                    <td colspan="12" class="text-center">No data to show yet.</td>
+                </tr>
+            {% endif %}
+            
+
+        </table>
+
+    </div>
+</div>
+
+{% endblock %}

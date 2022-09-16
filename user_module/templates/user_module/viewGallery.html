@@ -1,0 +1,140 @@
+{% extends 'user_module/layout.html' %}
+{% load static %}
+
+{% block body %}
+<!-- banner -->
+<div class="banner-bg-inner">
+    <!-- banner-text -->
+    <div class="banner-text-inner">
+        <div class="container">
+            <h2 class="title-inner">
+                {{data.event_id.name}}
+            </h2>
+
+        </div>
+    </div>
+    <!-- //banner-text -->
+</div>
+<!-- //banner -->
+<!-- team -->
+<div id="team" class="team section">
+    <div class="team-container">
+        <div class="team-row">
+            <!-- team grid1 -->
+            <div class="col-md-5 team-grid-left">
+                <!-- team individual grid -->
+                <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
+                    <div class="team-effect">
+                        <img src="{{data.img1.url}}" alt="img" class="img-responsive">
+                        <div class="social-icon">
+                            <!-- <a href="#" class="social-button twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-button facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="#" class="social-button google">
+                                <i class="fa fa-google-plus"></i>
+                            </a> -->
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <!-- <img src="{{data.img2.url}}" alt="img" class="img-responsive"> -->
+
+                    </div>
+                </div>
+                <!-- //team individual grid -->
+                <!-- team individual grid -->
+                <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
+                    <div class="team-text">
+                        <!-- <h4>Thomson Doe</h4>
+                        <span>Designation</span>
+                        <p>vallis molestie arcu morbi dapibus suscipit ante sit efficitur eu ante vesti.</p> -->
+                    </div>
+                    <div class="team-effect">
+                        <img src="{{data.img2.url}}" alt="img" class="img-responsive">
+                        <div class="social-icon">
+                            <!-- <a href="#" class="social-button twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-button facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="#" class="social-button google">
+                                <i class="fa fa-google-plus"></i>
+                            </a> -->
+                        </div>
+                    </div>
+                    <!-- //team individual grid -->
+                </div>
+            </div>
+            <!-- //team-grid1 ends here-->
+            <!--team-grid2 -->
+            <div class="col-md-2 col-sm-2 team-mid-txt text-center">
+                <span>our</span>
+                <h5>e</h5>
+                <h5>v</h5>
+                <h5>e</h5>
+                <h5>n</h5>
+                <h5>t</h5>
+            </div>
+            <!--//team-grid2 ends here-->
+            <!-- team grid3 -->
+            <!-- team individual grid -->
+            <div class="col-md-5 team-grid-right">
+                <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
+                    <div class="team-text">
+                        <!-- <h4>Smith Kevin</h4>
+                        <span>Designation</span>
+                        <p>vallis molestie arcu morbi dapibus suscipit ante sit efficitur eu ante vesti.</p> -->
+                    </div>
+                    <div class="team-effect">
+                        <img src="{{data.img3.url}}" alt="img" class="img-responsive">
+                        <div class="social-icon">
+                            <!-- <a href="#" class="social-button twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-button facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="#" class="social-button google">
+                                <i class="fa fa-google-plus"></i>
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+                <!-- //team individual grid -->
+                <!-- team individual grid -->
+                <div class="col-md-6 col-sm-6 col-xs-6 team-grids">
+                    <div class="team-effect">
+                        <img src="{{data.img4.url}}" alt="img" class="img-responsive">
+                        <div class="social-icon">
+                            <!-- <a href="#" class="social-button twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-button facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="#" class="social-button google">
+                                <i class="fa fa-google-plus"></i>
+                            </a> -->
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <!-- <h4>Laura Hill</h4>
+                        <span>Designation</span>
+                        <p>vallis molestie arcu morbi dapibus suscipit ante sit efficitur eu ante vesti.</p> -->
+                    </div>
+                </div>
+                <!-- //team individual grid -->
+                <div class="clearfix"> </div>
+            </div>
+            <!-- //team grid3 -->
+            <div class="clearfix"> </div>
+        </div>
+        <!-- //team-row ends here -->
+    </div>
+    <!-- // team container ends here -->
+</div>
+<!-- //team -->
+{% endblock %}

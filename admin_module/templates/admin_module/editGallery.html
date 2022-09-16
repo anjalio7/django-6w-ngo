@@ -1,0 +1,68 @@
+{% extends 'admin_module/layout.html' %}
+{% load static %}
+{% block body%}
+<div class="banner-bg-inner">
+    <!-- banner-text -->
+    <div class="banner-text-inner">
+        <div class="container">
+            <h2 class="title-inner">
+                Edit Gallery
+            </h2>
+
+        </div>
+    </div>
+    <!-- //banner-text -->
+</div>
+<!-- //banner -->
+<!-- breadcrumbs -->
+<div class="crumbs text-center">
+    <div class="container">
+        <div class="row">
+            <ul class="btn-group btn-breadcrumb bc-list">
+                <li class="btn btn1">
+                    <a href="{% url 'viewGallery'%}">
+                        <i class="glyphicon glyphicon-home"></i>
+                    </a>
+                </li>
+                <li class="btn btn2">
+                    <a href="{% url 'viewGallery'%}">List Gallery</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="about-sec section" id="about">
+
+    <div class="container contact-top1 " id="contact">
+        {% if message %}
+        <div class="alert alert-danger">
+            {{message}}
+        </div>
+    
+        {% endif %}
+        <form action="{% url 'editGallery' gal.id %}" method="post" class="form" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="col-lg-12 form-group mx-auto">
+                <label>Events</label>
+                <select name="event-name" class="form-control" id="">
+                    <option value="" selected disabled>Select event</option>
+
+                    {% for i in data %}
+                    <option {% if gal.event_id.id == i.id %} selected {% endif %} value="{{i.id}}">{{i.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-lg-12 form-group mx-auto">
+                <label for="">Images</label>
+                <input type="file" class="form-control" name="images" multiple="multiple">
+            </div>
+            <div class="col-md-12 mx-auto form-group text-center">
+                <button type="submit" class="d-block m-auto btn btn-secondary ">Edit</button>
+                </div>
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

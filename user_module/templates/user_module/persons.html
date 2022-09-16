@@ -1,0 +1,102 @@
+{% extends 'user_module/layout.html' %}
+
+{% block body %}
+
+<div class="banner-bg-inner">
+    <!-- banner-text -->
+    <div class="banner-text-inner">
+        <div class="container">
+            <h2 class="title-inner">
+                donations
+            </h2>
+
+        </div>
+    </div>
+    <!-- //banner-text -->
+</div>
+<!-- //banner -->
+
+<!-- /new_arrivals -->
+<div class="section singlep_btm">
+    <div class="container">
+        <div class="new_arrivals flex-wrap">
+            <h4 class="rad-txt">
+                <span class="abtxt1">People</span>
+                <!-- <span class="abtext"> products</span> -->
+            </h4>
+            {% for i in data %}
+            <!-- row3 -->
+            <div class="col-md-3 product-men">
+                <div class="product-chr-info chr">
+                    <div class="thumbnail">
+                        <a href="single_product.html">
+                            <img src="{{i.img.url}}" alt="">
+                        </a>
+                    </div>
+                    <div class="caption">
+                        <h4>{{i.name}}</h4>
+                        <p></p>
+                        <div class="matrlf-mid">
+                            <!-- <ul class="rating">
+                                <li>
+                                    <a href="#">
+                                        <span class="fa fa-star yellow-star" aria-hidden="true"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="fa fa-star yellow-star" aria-hidden="true"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="fa fa-star yellow-star" aria-hidden="true"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="fa fa-star gray-star" aria-hidden="true"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="fa fa-star gray-star" aria-hidden="true"></span>
+                                    </a>
+                                </li>
+                            </ul> -->
+                            <ul class="price-list">
+                                <li>{{i.age}} years</li>
+                                <li>
+                                    
+                                </li>
+                            </ul>
+                            {{i.gender}} <br>
+                            {{i.needs}}
+                            <div class="clearfix"> </div>
+                        </div>
+                        <!-- <form action="#" method="post">
+                            <input type="hidden" name="cmd" value="_cart">
+                            <input type="hidden" name="add" value="1">
+                            <input type="hidden" name="chr_item" value="Book1">
+                            <input type="hidden" name="amount" value="180.00">
+                            <button type="submit" class="chr-cart pchr-cart">Add to cart
+                                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                            </button>
+                            <a href="#" data-toggle="modal" data-target="#myModal1"></a>
+                        </form> -->
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- //row3 -->
+            <div class="clearfix"></div>
+        </div>
+        <!--//new_arrivals-->
+        <div class="clearfix"></div>
+
+    </div>
+</div>
+<!--// Single -->
+
+
+{% endblock %}

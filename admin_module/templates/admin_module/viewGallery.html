@@ -1,0 +1,142 @@
+{% extends 'admin_module/layout.html' %}
+{% load static %}
+
+{% block body %}
+<div class="banner-bg-inner">
+    <!-- banner-text -->
+    <div class="banner-text-inner">
+        <div class="container">
+            <h2 class="title-inner">
+                Gallery
+            </h2>
+
+        </div>
+    </div>
+    <!-- //banner-text -->
+</div>
+<!-- //banner -->
+<!-- breadcrumbs -->
+<div class="crumbs text-center">
+    <div class="container">
+        <div class="row">
+            <ul class="btn-group btn-breadcrumb bc-list">
+                <li class="btn btn1">
+                    <a href="{% url 'gallery'%}">
+                        <i class="glyphicon glyphicon-home"></i>
+                    </a>
+                </li>
+                <li class="btn btn2">
+                    <a href="{% url 'gallery'%}">Add Gallery</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<div class="about-sec section" id="about">
+    <!-- <div class="container"> -->
+        {% if data|length > 0 %}
+        {% for i in data %}
+        <!-- <div class="container  bg-dark border mb-4" style="margin-bottom: 8rem; box-shadow:0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); padding: 2rem;">
+            <div class=" d-flex justify-content-between" style="margin-bottom: 6rem;">
+                <div class="col-md-9">
+                    <h3>{{i.event_id.name}}</h3>
+                </div>
+                <div class="col-md-3">
+                    <a href="{% url 'editGallery' i.id %}">
+                            <button class="btn btn-warning">Edit</button>
+                        </a>
+
+                        <a href="{% url 'deleteGallery' i.id %}">
+                            <button class="btn btn-warning">Delete</button>
+                        </a>
+                    
+                </div>
+            </div>
+
+            <div class="text-center mt-4 d-flex justify-content-between flex-wrap">
+                <img src="{{i.img1.url}}" alt="" height="200" width="200">
+                <img src="{{i.img2.url}}" alt="" height="200" width="200">
+                <img src="{{i.img3.url}}" alt="" height="200" width="200">
+                <img src="{{i.img4.url}}" alt="" height="200" width="200">
+                <img src="{{i.img5.url}}" alt="" height="200" width="200">
+            </div>
+
+        </div> -->
+
+        <div class="section singlep_btm" style="padding: 2rem;">
+			<div class="container">
+				<div class="new_arrivals">
+                    <div class="row justify-content-between">
+                        <div class="col-md-10">
+                            <h4 class="rad-txt">
+                                <span class="abtxt1">{{i.event_id.name}}</span>
+                            </h4>
+                        </div>
+                        <div class="col-md-2">
+                            <h4>
+                                <a href="{% url 'editGallery' i.id %}"  class="btn btn-danger"> Edit</a>
+                                <a href="{% url 'deleteGallery' i.id %}" class="btn btn-danger"> Delete</a>   
+                            </h4>
+                        </div>
+                        
+                    </div>
+					
+					<!-- row3 -->
+					<div class="col-md-3 product-men">
+						<div class="product-chr-info chr">
+							<div class="thumbnail">
+								<a href="single_product.html">
+									<img src="{{i.img1.url}}" >
+								</a>
+							</div>
+							</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="product-chr-info chr">
+							<div class="thumbnail">
+								<a href="single_product.html">
+									<img src="{{i.img2.url}}" >
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="product-chr-info chr">
+							<div class="thumbnail">
+								<a href="single_product.html">
+									<img src="{{i.img3.url}}" >
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 product-men">
+						<div class="product-chr-info chr">
+							<div class="thumbnail">
+								<a href="single_product.html">
+									<img src="{{i.img4.url}}" >
+								</a>
+							</div>
+						</div>
+					</div>
+					<!-- //row3 -->
+					<div class="clearfix"></div>
+				</div>
+				<!--//new_arrivals-->
+				<div class="clearfix"></div>
+
+			</div>
+            <hr>
+		</div>
+		<!--// Single -->
+        {% endfor %}
+            {% else %}
+            <div class="alert alert-danger">
+                No data to show yet.
+            </div>
+        {% endif %}
+        
+    <!-- </div> -->
+</div>
+{% endblock %}
